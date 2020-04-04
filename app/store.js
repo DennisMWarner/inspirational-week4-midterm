@@ -12,8 +12,8 @@ let _state = {
   /**@type Image */
   images: [],
 
-  /**@type Quote */
-  quote: new Quote({ author: "", quoteUrl: "" }),
+  /**@type {Quote} */
+  quote: {},
 };
 
 /** Collection of listeners to be called based on keyed state changes

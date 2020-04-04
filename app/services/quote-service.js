@@ -1,5 +1,5 @@
 import Quote from "../models/quote.js";
-import store from "../store";
+import store from "../store.js";
 
 // @ts-ignore
 const _quoteApi = axios.create({
@@ -10,9 +10,14 @@ const _quoteApi = axios.create({
 //TODO create methods to retrieve data trigger the update window when it is complete
 class QuoteService {
   async getQuote() {
-    let res = await _quoteApi.get().catch((err) => console.log(err));
+    let res = await _quoteApi
+      .get()
+
+      .catch((err) => console.log(err));
+    console.log(res.data);
     store.commit("quote", new Quote(res.data));
   }
 }
+console.log(store.State.quote);
 const quoteService = new QuoteService();
 export default quoteService;
