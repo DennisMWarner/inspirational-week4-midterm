@@ -6,8 +6,8 @@ let _state = {
   weather: new Weather({ name: "loading", main: { temp: 0.0 } }), //temporary fake data
   /**@type {any[]}*/
   todos: [], //TODO change 'any' to your todo model
-  /**@type {Image[]} */
-  images: []
+  /**@type{Image} */
+  images: [],
 };
 
 /** Collection of listeners to be called based on keyed state changes
@@ -15,7 +15,7 @@ let _state = {
  */
 let _listeners = {
   weather: [],
-  images: []
+  images: [],
 };
 
 /**
@@ -67,7 +67,7 @@ class Store {
   commit(prop, data) {
     _validateProp(prop);
     _state[prop] = data;
-    _listeners[prop].forEach(fn => fn());
+    _listeners[prop].forEach((fn) => fn());
   }
 }
 
