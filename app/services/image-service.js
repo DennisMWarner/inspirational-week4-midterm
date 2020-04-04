@@ -13,14 +13,12 @@ class ImageService {
     imgApi
       .get()
       .then((res) => {
-        console.log(res);
         let image = new Image(res.data);
         store.commit("images", image);
       })
       .catch((err) => {
         console.error(err);
       });
-    console.log("images in store:", store.State.images);
   }
 }
 const imageService = new ImageService();

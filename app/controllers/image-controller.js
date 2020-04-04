@@ -7,8 +7,6 @@ function backgroundImageDraw() {
   let urlString = store.State.images.imgUrl;
 
   document.body.style.backgroundImage = "url(" + urlString + ")";
-
-  console.log(store.State.images.imgUrl);
 }
 export default class ImageController {
   constructor() {
