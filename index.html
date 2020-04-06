@@ -13,30 +13,42 @@
     />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-<main>
-  <body class="container">
-    <div class="row" id="weather">
+
+  <body >
+    <div id="body-background">
+    <main class="container-fluid">
+    <div class="row  m-3" id="weather">
       <!-- inject weather template here-->
     </div>
 
     <div id="quote">
-      <h1 class="text-light">
-      The Quote</h1>
+       <!-- inject quote template here-->
     </div>
   </h1>
 
-    <div>
+    <div class="row">
+      <div class="col-4">
       <h1 class="text-light">
       A Todo List</h1>
-      <div id="todo-error"></div>
-      <form onsubmit=""></form>
+      
+      
+      <div class="input-group mb-3">
+        <input type="text" class="form-control see-through-light" placeholder="Enter a new 'To-do' here... ">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary see-through-dark form-control" type="button" id="button-addon2">Button</button>
+        </div>
+      </div>
+      
+
       <div id="todos"></div>
+    </div>
     </main>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+   
 
     <script type="module" src="app/main.js"></script>
   </body>
 </html>
-<html></html>
+

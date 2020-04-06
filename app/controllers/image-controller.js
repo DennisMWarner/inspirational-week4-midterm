@@ -5,8 +5,9 @@ import store from "../store.js";
 //      (you may wish to set it as a background image)
 function backgroundImageDraw() {
   let urlString = store.State.images.imgUrl;
-
-  document.body.style.backgroundImage = "url(" + urlString + ")";
+  console.log(urlString);
+  document.getElementById("body-background").style.backgroundImage =
+    "url(" + urlString + ")";
 }
 export default class ImageController {
   constructor() {

@@ -5,7 +5,16 @@ export default class Image {
 
     //TODO You should probably convert the temperature data to either F or C
     //      check out the other data that comes back and see if there is anything you want to try
-    this.id = data.id;
-    this.imgUrl = data.large_url;
+    if (
+      !data.large_url ||
+      !data.large_url.includes(".jpg" || ".png" || ".jpeg" || ".mp4")
+    ) {
+      this.imgUrl = "app/assets/images/_20190619_120542.JPG";
+      console.log("server image is not an image type");
+    } else {
+      this.imgUrl = data.large_url || "app/assets/images/_20190619_120542.JPG";
+    }
+
+    this.id = data.id || "";
   }
 }

@@ -4,7 +4,7 @@ import Image from "../models/image.js";
 // @ts-ignore
 const imgApi = axios.create({
   baseURL: "//bcw-sandbox.herokuapp.com/api/images",
-  timeout: 8000,
+  timeout: 3000,
 });
 
 //TODO create methods to retrieve data trigger the update window when it is complete
@@ -18,6 +18,9 @@ class ImageService {
       })
       .catch((err) => {
         console.error(err);
+        let image = new Image("");
+        store.commit("images", image);
+        console.log("default Image constructor called and commited to store");
       });
   }
 }

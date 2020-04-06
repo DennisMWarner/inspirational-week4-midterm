@@ -9,7 +9,7 @@ const todoApi = axios.create({
 class TodoService {
   getTodos() {
     //console.log("Getting the Todo List");
-    todoApi.get();
+    todoApi.get((res) => console.log(res));
     //TODO Handle this response from the server
   }
 
