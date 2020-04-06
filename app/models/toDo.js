@@ -10,9 +10,10 @@ export default class ToDo {
   //Be sure to add the methods needed to create the view template for this model
   //For starting out, your tasks may be strings alone, but later you may wish to turn them into full objects, that will be up to you
   get Template() {
-    return /*html*/ `<div class="col-12 text-light">
-              <div><p class="see-through-light p-2 m-2 rounded" id="${this.id}">${this.description}  </p></div>
-              <div><button class=" btn crounded no-border see-through-dark text-secondary" onClick="app.todoController.removeTodo('${this.id}')"><p>&times</p></button></div>
-            </div>`;
+    return /*html*/ `<div class="col-12 mx-auto text-light" id="${this.id}">
+              <button class="btn see-through-light w-75 p-1 m-2 rounded form-control font-weight-bolder" onClick="app.todoController.toggleTodoStatus('${this.id}')"><h4>${this.description}</h4></button>
+              <button class=" btn rounded no-border see-through-dark text-secondary" onClick="app.todoController.removeTodo('${this.id}')"><h4>&times</h4></button></<button>
+              </div>
+            `;
   }
 }

@@ -10,10 +10,11 @@ let _state = {
   /**@type {ToDo[]}*/
   toDos: [], //TODO change 'any' to your todo model
 
-  /**@type Image */
+  /**@type Image[] */
   images: [],
 
   /**@type {Quote} */
+  // @ts-ignore
   quote: {},
 };
 
