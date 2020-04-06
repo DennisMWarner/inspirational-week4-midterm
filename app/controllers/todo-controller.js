@@ -3,23 +3,35 @@ import store from "../store.js";
 
 //TODO Create the render function
 function _drawTodos() {
-  document.getElementById;
+  let template = "";
+  store.State.toDos.forEach((element) => {
+    template += element.Template;
+  });
+  if (store.State.toDos.length == 0) {
+    template = /*html*/ `<div class="col-12 text-light">
+    <h2 class="see-through-light p-2 m-2 rounded">Congratulations!  Nothing to do today!</h2>
+  </div>`;
+  }
+  document.getElementById("todo-list").innerHTML = template;
 }
 
 export default class TodoController {
   constructor() {
     //TODO Remember to register your subscribers
-    console.log("TodoController constructed...");
+
     TodoService.getTodos();
-    store.subscribe("toDo", _drawTodos);
+    store.subscribe("toDos", _drawTodos);
   }
 
   addTodo(e) {
-    console.log("addTodo called...", e.target.aNewItem.value);
     e.preventDefault();
+
     let form = e.target;
-    let todo = {};
-    // TodoService.addTodoAsync(todo);
+    let newTodoObject = {
+      description: form.todoItem.value,
+    };
+    TodoService.addTodoAsync(newTodoObject);
+    form.reset();
   }
 
   //NOTE This method will pass an Id to your service for the TODO that will need to be toggled

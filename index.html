@@ -16,8 +16,8 @@
 
   <body >
     <div id="body-background">
-    <main class="container-fluid">
-    <div class="row  m-3" id="weather">
+    <main class="container-fluid p-3">
+    <div class="row  m-5 " id="weather">
       <!-- inject weather template here-->
     </div>
 
@@ -25,30 +25,39 @@
        <!-- inject quote template here-->
     </div>
   </h1>
+<!--row that contains Todo list header, nested todo items and new item input-->
+    <div class="row mt-5 mx-auto mt-5">
+      <div class="col-md-4  see-through-dark rounded">
+        <div class="col-12 see-through-dark rounded mt-3 mx-auto py-1"><h3>To do today: </h3></div>
+        <div class="row" id="todo-list">
+            <!-- inject todo list template here in place of placeholder -->
+            <div class="col-12 text-light">
+              <h2 class="see-through-light p-2 m-2 rounded">Congratulations!  Nothing to do today!</h2>
+            </div>
 
-    <div class="row">
-      <div class="col-4">
-      <h1 class="text-light">
-      A Todo List</h1>
-      
-      
-      <div class="input-group mb-3">
-        <input type="text" class="form-control see-through-light" placeholder="Enter a new 'To-do' here... ">
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary see-through-dark form-control" type="button" id="button-addon2">Button</button>
+        </div>
+        <div class="row mt-2">
+          <div class="col-12">
+            <form onSubmit="app.todoController.addTodo(event)">
+            <div class="input-group mb-3">
+              <input type="text" class="form-control  text-dark see-through-light" placeholder="Enter a new 'To-do' here... " name="todoItem">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary see-through-dark form-control" type="submit" id="button-addon2">Add</button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
-      
-
-      <div id="todos"></div>
+     
     </div>
+  </div>
     </main>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
-   
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script type="module" src="app/main.js"></script>
+      
   </body>
 </html>
 
